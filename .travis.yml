@@ -8,6 +8,10 @@ cache:
   directories:
   - node_modules
 
+branches:
+  only:
+  - master
+
 before_install:
   - . $HOME/.nvm/nvm.sh
   - nvm install
@@ -37,7 +41,6 @@ deploy:
   skip-cleanup: true
   github-token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
   keep-history: true
-  local_dir: site
   target_branch: gh-pages
   on:
     branch: master
