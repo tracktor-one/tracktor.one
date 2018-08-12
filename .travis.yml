@@ -1,0 +1,41 @@
+language: ruby
+rvm:
+  - 2.4.1
+
+before_install:
+  - . $HOME/.nvm/nvm.sh
+  - nvm install
+  - nvm use
+  - curl -o- -L https://yarnpkg.com/install.sh | bash
+  - export PATH=$HOME/.yarn/bin:$PATH
+
+before_script:
+  - yarn
+  - bundle exec jekyll build --config _config.yml,_config_travis.yml
+
+env:
+  global:
+  - NOKOGIRI_USE_SYSTEM_LIBRARIES=true # speeds up installation of html-proofer
+
+sudo: false # route your build to the container-based infrastructure for a faster build
+
+cache:
+  bundler: true
+  yarn: true
+  directories:
+  - node_modules
+
+# Optional: disable email notifications about the outcome of your builds
+notifications:
+  email: false
+
+deploy:
+  provider: pages
+  repo: tracktor-one/trackor-one.github.io
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
+  keep-history: true
+  local_dir: site
+  target_branch: gh-pages
+  on:
+    branch: master
