@@ -37,10 +37,9 @@ notifications:
 
 deploy:
   provider: pages
-  repo: "tracktor-one/trackor-one.github.io"
+  repo: 'tracktor-one/tracktor-one.github.io'
   skip-cleanup: true
   github-token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
   keep-history: true
-  target_branch: gh-pages
   on:
     branch: master
