@@ -1,0 +1,27 @@
+header {
+	background: $primary-color;
+	a {
+		color: $white;
+		&:hover {
+			color: darken($white, 5%);
+		}
+	}
+}
+main {
+	background: $secondary-color;
+	a {
+		color: $white;
+		&:hover {
+			color: darken($white, 5%);
+		}
+	}
+}
+footer {
+	background: $primary-color;
+	a {
+		color: $white;
+		&:hover {
+			color: darken($white, 5%);
+		}
+	}
+}

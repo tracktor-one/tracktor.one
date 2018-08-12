@@ -1,0 +1,21 @@
+/**
+ * @file
+ * This file includes every settings change from foundation-sites
+ * Copy over the section what it is from and the tweak the variables
+ */
+
+// 1. Global
+// ---------
+
+$foundation-palette: (
+  primary: #4e6d47,
+  secondary: #adadad,
+  success: #3adb76,
+  warning: #ffae00,
+  alert: #cc4b37,
+);
+$body-font-family: Muli, 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+
+// 4. Base Typography
+// ------------------
+$font-family-monospace: 'Roboto Mono', Consolas, 'Liberation Mono', Courier, monospace;
