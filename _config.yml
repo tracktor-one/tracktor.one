@@ -1,0 +1,59 @@
+# Site settings
+title: "Tracktor"
+baseurl: ""
+url: "https://tracktor-one.github.io"
+
+# Build settings
+markdown: kramdown
+
+# Compress layout settings
+compress_html:
+  clippings: []
+  comments: []
+  endings: []
+  ignore:
+    envs: []
+  blanklines: true
+  profile: false
+  startings: []
+
+exclude:
+  - package.json
+  - yarn.lock
+  - node_modules
+  - Gemfile
+  - Gemfile.lock
+  - .jekyll-cache
+
+plugins:
+  - jekyll
+  - jekyll-paginate-v2
+  - jekyll-sitemap
+  - jemoji
+  - jekyll-assets
+  - jekyll-multiple-languages-plugin
+  - jekyll-optional-front-matter
+  - jekyll-titles-from-headings
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-mentions
+
+assets:
+  compress:
+    css: true
+    js: true
+  sources:
+    - _assets
+    - _assets/js
+    - _assets/scss
+    - node_modules/jquery/dist
+    - node_modules/what-input/dist
+    - node_modules/foundation-sites/dist/js
+    - node_modules/motion-ui/dist
+    - node_modules/foundation-sites/scss
+
+titles_from_headings:
+  enabled:     true
+  strip_title: true
+
+languages: ['en', 'de']
