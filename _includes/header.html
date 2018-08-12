@@ -1,0 +1,29 @@
+<header>
+	<div class="grid-container">
+		<div class="grid-x grid-padding-x">
+			<div id="logo" class="cell medium-6">
+				<a href="/">
+					<img src="" alt="Logo" />
+				</a>
+			</div>
+			<nav class="cell medium-6 text-right">
+				<ul class="menu">
+					{% assign cururl = page.url %}
+					{% for page in site.pages %}
+						{% if page.title %}
+							{% if cururl contains page.url | prepend: site.baseurl %}
+								<li class="is-active">
+									<a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+								</li>
+							{% else %}
+								<li>
+									<a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+								</li>
+							{% endif %}
+						{% endif %}
+					{% endfor %}
+				</ul>
+			</nav>
+		</div>
+	</div>
+</header>
